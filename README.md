@@ -1,4 +1,5 @@
 # testing-git-repo-R
 Following: https://happygitwithr.com/push-pull-github.html#push-pull-github
 
-asfasfd
+HTTPS: 
+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

@@ -71,9 +71,13 @@ fit <- sampling(md,
                 chains = 4, iter = 2000)
 print(fit, pars = c("pop_var","beta_fix","beta_ran"))
 
-library(bayesplot)
-y_rep = extract(fit)[["y_pred"]]
-samp101 = sample(nrow(y_rep), length(sleepstudy$Reaction))
-color_scheme_set("green")
-ppc_dens_overlay(sleepstudy$Reaction, y_rep[samp101,])
- 
+library(shinystan)
+
+shinystan::launch_shinystan(fit)
+
+# library(bayesplot)
+# y_rep = extract(fit)[["y_pred"]]
+# samp101 = sample(nrow(y_rep), length(sleepstudy$Reaction))
+# color_scheme_set("green")
+# ppc_dens_overlay(sleepstudy$Reaction, y_rep[samp101,])
+#  
